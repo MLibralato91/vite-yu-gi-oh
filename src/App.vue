@@ -1,15 +1,42 @@
 
 <template>
-<h1>ciao</h1>
+<HeaderComponent title="Yu-Gi-Oh" />
+  <main>
+    <CharactersList />
+
+  </main>
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    components:{
-      
-    }    
+import { store } from './data/store';
+import axios from 'axios';
+import HeaderComponent from './components/HeaderComponent.vue';
+import CharactersList from './components/CharactersList.vue';
+export default {
+  name: 'App',
+  components: {
+    HeaderComponent,
+    CharactersList
+  },
+  data() {
+    return {
+      store
+    }
+  },
+  methods: {
+    getCharacters() {
+      const url = store.baseUrl;
+      axios.get(url).then((res) => {
+        //console.log(res.data.data);
+        store.characterList = res.data.data;
+        //console.log(store.characterList);
+      });
+    }
+  },
+  mounted() {
+    this.getCharacters();
   }
+}
 </script>
 
 <style lang="scss" scoped>

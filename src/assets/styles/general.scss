@@ -5,3 +5,8 @@ $fa-font-path: './webfonts';
 @import 'bootstrap/scss/bootstrap';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+body{
+  font-family: $main-font;
+  background-color: rgb(102, 124, 124);
+}
