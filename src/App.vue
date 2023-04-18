@@ -20,12 +20,17 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+     
+
     }
   },
   methods: {
     getCharacters() {
-      const url = store.baseUrl;
+      let url = store.baseUrl + store.endpoint;
+      
+
+
       axios.get(url).then((res) => {
         //console.log(res.data.data);
         store.characterList = res.data.data;
@@ -34,6 +39,7 @@ export default {
     }
   },
   mounted() {
+    store.endpoint = ''
     this.getCharacters();
   }
 }

@@ -10,7 +10,7 @@
 import { store } from '../data/store';
 import CharacterCard from './CharacterCard.vue';
 
-console.log('store',  store );
+
 export default {
   name: 'CharactersList',
   components: {

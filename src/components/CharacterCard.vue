@@ -11,11 +11,12 @@
 </template>
 
 <script>
-
 export default {
   name: 'CharacterCard',
-  props: ['character']
+  props: ['character'],
+  
 }
+
 </script>
 
 <style lang="scss" scoped>
