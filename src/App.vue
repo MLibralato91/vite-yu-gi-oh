@@ -38,7 +38,7 @@ export default {
         }
       }
       if (store.search.archetype != ''){
-        url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?'
+        url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0'
          console.log(url)
       }
       axios.get(url, {params}).then((res) => {
